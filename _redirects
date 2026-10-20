@@ -1,0 +1,3 @@
+# Netlify Redirects
+/compare    /compare.html    200
+/usage      /index.html      200

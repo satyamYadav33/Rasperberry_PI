@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBC Universe: Raspberry Pi &amp; Radxa Ecosystem Showcase &amp; Real-World Usage</title>
+  <meta name="description" content="Explore the comprehensive lineups, silicon architectures, and real-world project usage of Raspberry Pi and Radxa Single Board Computers.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            rpi: '#E30B5C',
+            radxa: '#00E676',
+            darkBg: '#090D16',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-darkBg text-gray-100 min-h-screen flex flex-col bg-grid-pattern relative">
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="absolute top-0 left-0 w-full h-[600px] hero-glow-rpi pointer-events-none -z-10"></div>
+  <div class="absolute top-0 right-0 w-full h-[600px] hero-glow-radxa pointer-events-none -z-10"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-gray-950/80 border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-pink-600 to-emerald-400 p-0.5 flex items-center justify-center shadow-lg shadow-emerald-500/10">
+            <div class="w-full h-full bg-gray-950 rounded-[10px] flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-emerald-400"></i>
+            </div>
+          </div>
+          <div>
+            <span class="font-extrabold text-base tracking-tight text-white flex items-center gap-1.5">
+              SBC<span class="text-gradient-dual">NEXUS</span>
+            </span>
+            <span class="text-[10px] text-gray-400 block -mt-1 font-mono">Raspberry Pi &bull; Radxa</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium">
+        <a href="#featured" class="text-gray-300 hover:text-white transition">Featured Boards</a>
+        <a href="#catalog" class="text-gray-300 hover:text-white transition">All SBC Models</a>
+        <a href="#usecases" class="text-gray-300 hover:text-white transition">Project Recipes & Usage</a>
+        <a href="#terminal" class="text-gray-300 hover:text-white transition">Live Terminal</a>
+      </nav>
+
+      <!-- Action Button to Separate Comparison Page -->
+      <div class="flex items-center gap-3">
+        <a href="compare.html" class="px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-pink-600 via-purple-600 to-emerald-500 hover:from-pink-500 hover:to-emerald-400 text-white shadow-lg shadow-pink-600/20 hover:shadow-emerald-500/20 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+          <span>Head-to-Head Showdown</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <!-- Top Pill -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-900/90 border border-gray-700/80 text-xs text-gray-300 mb-6 shadow-xl backdrop-blur-md">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="text-pink-400 font-semibold">Raspberry Pi 5</span>
+        <span class="text-gray-600">&bull;</span>
+        <span class="text-emerald-400 font-semibold">Radxa Dragon Q8B</span>
+        <span class="text-gray-600">&bull;</span>
+        <span class="text-gray-400">Silicon Architectures & Usage Guide</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
+        The Complete Guide to <br/>
+        <span class="text-gradient-dual">Raspberry Pi & Radxa</span> Single Board Computers
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        From maker education and lightweight IoT to bleeding-edge <strong>29+ TOPS NPU</strong> Edge AI, <strong>Dual 2.5GbE networking</strong>, and native <strong>Dual M.2 NVMe</strong> storage. Discover how both ecosystems shape modern edge computing.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#usecases" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold shadow-lg shadow-indigo-600/30 transition flex items-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4"></i> Explore Real-World Usage
+        </a>
+        <a href="compare.html" class="px-6 py-3 rounded-xl bg-gray-800/80 hover:bg-gray-700 text-gray-200 hover:text-white text-sm font-semibold border border-gray-700/80 transition flex items-center gap-2">
+          <i data-lucide="git-compare" class="w-4 h-4 text-emerald-400"></i> Compare Pi vs Radxa Page
+        </a>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="mt-14 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl glass-panel border border-gray-800/80 shadow-2xl">
+        <div class="p-2">
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">15+</div>
+          <div class="text-xs text-gray-400 mt-0.5">SBC Models Cataloged</div>
+        </div>
+        <div class="p-2">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">29+ TOPS</div>
+          <div class="text-xs text-gray-400 mt-0.5">Peak Onboard AI Compute</div>
+        </div>
+        <div class="p-2">
+          <div class="text-2xl sm:text-3xl font-extrabold text-pink-400 font-mono">10,000+</div>
+          <div class="text-xs text-gray-400 mt-0.5">Maker HATs & Tutorials</div>
+        </div>
+        <div class="p-2">
+          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono">5.0 Gbps</div>
+          <div class="text-xs text-gray-400 mt-0.5">Dual 2.5G Wire Speed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Hardware Showcase (User's Exact Boards) -->
+  <section id="featured" class="py-12 border-t border-gray-800/60 bg-gray-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-wider text-emerald-400 flex items-center gap-1.5">
+            <i data-lucide="star" class="w-4 h-4"></i> Flagship Spotlights
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">The Titans of the Modern SBC Era</h2>
+          <p class="text-xs sm:text-sm text-gray-400 mt-1">Featured directly from hardware evaluation: The community standard vs the edge performance beast.</p>
+        </div>
+        <a href="compare.html" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition">
+          View side-by-side hardware teardown <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Raspberry Pi 5 Spotlight Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-pink-500/30 relative overflow-hidden group">
+          <div class="absolute -right-12 -top-12 w-48 h-48 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge-rpi text-xs font-bold px-3 py-1 rounded-full border flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Raspberry Pi Ecosystem Leader
+            </span>
+            <span class="text-xs text-gray-400 font-mono">Broadcom BCM2712</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Raspberry Pi 5</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
+            The standard bearer of educational and maker computing. Featuring a custom 2.4 GHz quad-core Cortex-A76 processor, RP1 I/O controller, PCIe 2.0 expansion ribbon, and the most mature ARM Linux distribution on the planet.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Architecture</span>
+              <strong class="text-white">4x A76 @ 2.4 GHz</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">RAM Capacity</span>
+              <strong class="text-white">1GB - 16GB LPDDR4X</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Wired LAN</span>
+              <strong class="text-white">1x Gigabit Ethernet</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Storage</span>
+              <strong class="text-white">MicroSD + PCIe 2.0 FPC</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Video Out</span>
+              <strong class="text-white">Dual Micro-HDMI 4K60</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Community</span>
+              <strong class="text-pink-400">#1 Global Ecosystem</strong>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+            <span class="text-xs text-gray-400">Best for: Education, STEM, Home Assistant, Lightweight Nodes</span>
+            <button onclick="openModelModal('rpi-5')" class="px-4 py-2 text-xs font-semibold rounded-xl bg-pink-600/20 hover:bg-pink-600 text-pink-300 hover:text-white border border-pink-500/40 transition flex items-center gap-1.5">
+              Explore Pi 5 Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Radxa Dragon Q8B Spotlight Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-emerald-500/30 relative overflow-hidden group">
+          <div class="absolute -right-12 -top-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge-radxa text-xs font-bold px-3 py-1 rounded-full border flex items-center gap-1.5">
+              <i data-lucide="zap" class="w-3.5 h-3.5"></i> 29+ TOPS Intelligent Edge
+            </span>
+            <span class="text-xs text-gray-400 font-mono">Qualcomm Snapdragon 8cx Gen 3</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Radxa Dragon Q8B</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
+            The next generation of high-performance edge computing. Powered by a 5nm Qualcomm Snapdragon 8cx Gen 3 octa-core chip, built-in 29+ TOPS Hexagon NPU, Dual 2.5GbE ports, and Dual native M.2 NVMe SSD slots right on the PCB.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Architecture</span>
+              <strong class="text-white">8-Core Kryo (4x 3.0GHz)</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">AI NPU</span>
+              <strong class="text-emerald-400">29+ TOPS Onboard</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Wired LAN</span>
+              <strong class="text-emerald-400">Dual 2.5GbE (5 Gbps)</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Storage</span>
+              <strong class="text-white">Dual M.2 NVMe (PCIe 3.0)</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Displays</span>
+              <strong class="text-white">Triple 4K120 (HDMI 2.1)</strong>
+            </div>
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 text-xs">
+              <span class="text-gray-500 block text-[10px] uppercase">Memory Bus</span>
+              <strong class="text-white">128-bit (8-Channel)</strong>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
+            <span class="text-xs text-gray-400">Best for: Local LLMs, 2.5G Routers, TrueNAS, Workstations</span>
+            <button onclick="openModelModal('radxa-dragon-q8b')" class="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/40 transition flex items-center gap-1.5">
+              Explore Dragon Q8B <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete SBC Catalog & Filterable Explorer -->
+  <section id="catalog" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-wider text-indigo-400 flex items-center gap-1.5">
+            <i data-lucide="grid" class="w-4 h-4"></i> Complete Hardware Index
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Explore All Raspberry Pi & Radxa SBCs</h2>
+          <p class="text-xs sm:text-sm text-gray-400 mt-1">Filter by brand, search by processor or feature, and click any board for comprehensive specs.</p>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative w-full md:w-72">
+          <i data-lucide="search" class="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input 
+            type="text" 
+            id="model-search-input" 
+            placeholder="Search SoC, RAM, NPU, 2.5G..." 
+            class="w-full bg-gray-900/90 border border-gray-800 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition" />
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 mb-8">
+        <button data-brand-filter="all" class="px-4 py-2 text-xs font-semibold rounded-xl bg-gray-700 text-white border border-gray-500 transition">
+          All Boards (8)
+        </button>
+        <button data-brand-filter="rpi" class="px-4 py-2 text-xs font-semibold rounded-xl bg-gray-800/60 text-gray-400 border border-gray-800 hover:text-white transition flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-pink-500"></span> Raspberry Pi Lineup
+        </button>
+        <button data-brand-filter="radxa" class="px-4 py-2 text-xs font-semibold rounded-xl bg-gray-800/60 text-gray-400 border border-gray-800 hover:text-white transition flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Radxa Lineup
+        </button>
+      </div>
+
+      <!-- Models Grid (Filled dynamically via main.js) -->
+      <div id="models-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Real-World Usage & Project Recipes Section -->
+  <section id="usecases" class="py-16 border-t border-gray-800/60 bg-gray-950/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase font-bold tracking-wider text-emerald-400 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 mb-2">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i> Practical Application Blueprint
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">How to Use These Boards in Real Projects</h2>
+        <p class="text-xs sm:text-sm text-gray-400 mt-2">
+          Compare the engineering approaches between Raspberry Pi and Radxa across 6 key industry verticals, with copyable code scripts and hardware BOMs.
+        </p>
+      </div>
+
+      <!-- Domain Category Tabs -->
+      <div id="usecases-tabs" class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none justify-start lg:justify-center">
+        <!-- Injected via main.js -->
+      </div>
+
+      <!-- Active Use Case Display Container -->
+      <div id="usecase-display">
+        <!-- Injected via main.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Terminal Simulator Section ("Live SBC Console") -->
+  <section id="terminal" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-8 mb-8">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-wider text-indigo-400 flex items-center gap-1.5">
+            <i data-lucide="terminal" class="w-4 h-4"></i> Interactive Emulation
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Live SBC Terminal Simulator</h2>
+          <p class="text-xs sm:text-sm text-gray-400 mt-1 max-w-xl">
+            Experience what it feels like to SSH into both boards. Switch between the Raspberry Pi 5 and Radxa Dragon Q8B to run diagnostics, test NPU recognition, inspect PCIe lanes, and verify network line-rates.
+          </p>
+        </div>
+
+        <!-- Machine Switcher -->
+        <div class="flex items-center gap-3 bg-gray-900 p-2 rounded-xl border border-gray-800">
+          <span class="text-xs text-gray-400 pl-2">Target Board:</span>
+          <select id="term-machine" class="bg-gray-950 border border-gray-700 text-xs rounded-lg px-3 py-1.5 text-white font-mono focus:outline-none focus:border-indigo-500">
+            <option value="rpi">raspberrypi (Pi 5 Bookworm)</option>
+            <option value="radxa" selected>radxa-dragon-q8b (Snapdragon 5nm)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Quick Command Buttons -->
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="text-xs text-gray-500 mr-2">Click to run:</span>
+        <button data-term-cmd="lscpu" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-mono text-gray-300 hover:text-white transition border border-gray-700">lscpu</button>
+        <button data-term-cmd="npu-smi" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition border border-gray-700">npu-smi (Check AI)</button>
+        <button data-term-cmd="lspci" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-mono text-gray-300 hover:text-white transition border border-gray-700">lspci (NVMe & NICs)</button>
+        <button data-term-cmd="iperf3" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-mono text-gray-300 hover:text-white transition border border-gray-700">iperf3 (Speed Test)</button>
+        <button data-term-cmd="ollama run llama3.2" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-mono text-indigo-400 hover:text-indigo-300 transition border border-gray-700">ollama run llama3.2</button>
+        <button data-term-cmd="clear" class="px-3 py-1 rounded-lg bg-gray-900 hover:bg-gray-800 text-xs font-mono text-gray-500 hover:text-gray-300 transition border border-gray-800">clear</button>
+      </div>
+
+      <!-- Terminal Window Box -->
+      <div class="terminal-window overflow-hidden">
+        <div class="terminal-header flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+            <span class="text-xs text-gray-400 font-mono ml-2">ssh - SBC Diagnostics Terminal</span>
+          </div>
+          <span class="text-[11px] text-gray-500 font-mono">bash 5.2.15</span>
+        </div>
+
+        <div id="term-output" class="p-4 md:p-6 min-h-[280px] max-h-[420px] overflow-y-auto text-xs font-mono text-gray-200 space-y-2">
+          <div class="text-gray-500">Welcome to the SBC interactive shell simulator.</div>
+          <div class="text-gray-500">Select a preset command above or type a command below and press Enter.</div>
+        </div>
+
+        <div class="p-3 bg-gray-950 border-t border-gray-800 flex items-center gap-2">
+          <span id="term-prompt-label" class="text-emerald-400 font-bold font-mono text-xs">radxa@dragon-q8b:~ $</span>
+          <input 
+            type="text" 
+            id="term-input" 
+            placeholder="Type 'lscpu', 'npu-smi', 'iperf3'..." 
+            class="w-full bg-transparent border-none text-xs text-white font-mono focus:outline-none placeholder-gray-600" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Giant Callout Banner to Head-to-Head Comparison Page -->
+  <section class="py-16 relative overflow-hidden bg-gradient-to-b from-transparent to-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-panel rounded-3xl p-8 md:p-12 border border-emerald-500/30 text-center relative overflow-hidden shadow-2xl">
+        <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 inline-block mb-3">
+          Dedicated Deep-Dive Faceoff
+        </span>
+
+        <h2 class="text-3xl sm:text-5xl font-black text-white max-w-3xl mx-auto leading-tight">
+          Ready to Compare the Differences <br/>
+          <span class="text-gradient-dual">Feature-by-Feature?</span>
+        </h2>
+
+        <p class="mt-4 text-xs sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          Step into our dedicated head-to-head comparison portal with interactive photo hotspot pins on the physical boards, benchmark arena charts, a 5-question recommendation wizard, and real total cost calculator.
+        </p>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="compare.html" class="px-8 py-4 text-sm font-extrabold rounded-2xl bg-gradient-to-r from-pink-600 to-emerald-500 hover:from-pink-500 hover:to-emerald-400 text-white shadow-xl shadow-emerald-500/20 transition-all transform hover:scale-105 flex items-center gap-2">
+            <span>Launch Raspberry Pi vs Radxa Comparison Page</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Full Specs Details (Opened via JS) -->
+  <div id="model-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+    <div id="model-modal-content" class="glass-panel w-full max-w-3xl rounded-3xl border border-gray-700 shadow-2xl overflow-hidden my-8 max-h-[90vh] overflow-y-auto">
+      <!-- Injected via main.js openModelModal() -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-gray-900 bg-black/60 py-8 text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="text-gray-400 font-semibold">SBC Universe Explorer & Head-to-Head Comparison Hub</p>
+        <p class="text-gray-600 text-[11px] mt-0.5">Featuring Raspberry Pi 5 & Radxa Dragon Q8B Qualcomm SC8280XP Edge Motherboard</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-gray-300 transition">Usage Home</a>
+        <a href="compare.html" class="hover:text-emerald-400 transition">Pi vs Radxa Comparison</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

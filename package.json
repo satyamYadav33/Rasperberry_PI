@@ -1,0 +1,32 @@
+{
+  "name": "raspberry-pi-vs-radxa-sbc-showcase",
+  "version": "1.0.0",
+  "description": "Interactive showcase and head-to-head engineering comparison between Raspberry Pi and Radxa Single Board Computers.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 8080",
+    "dev": "npx serve . -l 8080",
+    "build": "echo 'Static assets ready for deployment'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyamYadav33/Rasperberry_PI.git"
+  },
+  "keywords": [
+    "raspberry-pi",
+    "radxa",
+    "sbc",
+    "raspberry-pi-5",
+    "radxa-dragon-q8b",
+    "single-board-computer",
+    "hardware-comparison",
+    "edge-ai",
+    "benchmarks"
+  ],
+  "author": "Satyam Yadav <satyamyadav73149@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/satyamYadav33/Rasperberry_PI/issues"
+  },
+  "homepage": "https://github.com/satyamYadav33/Rasperberry_PI#readme"
+}
